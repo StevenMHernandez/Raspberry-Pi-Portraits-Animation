@@ -1,0 +1,21 @@
+* {
+    overflow: hidden;
+}
+
+body, html {
+    background: #000;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.ie {
+    height: 1px;
+    width: 1px;
+}
+
+canvas {
+    height: 100%;
+    width: 100%;
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portrait Animation.</title>
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div class="ie"></div>
+<canvas></canvas>
+
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="/assets/js/animation.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io('http://localhost:3005/animation');
+    socket.on('newImage', function (data) {
+        console.log(data);
+        var uri = data;
+        renderNewImage(uri);
+    });
+</script>
+</body>
+</html>
