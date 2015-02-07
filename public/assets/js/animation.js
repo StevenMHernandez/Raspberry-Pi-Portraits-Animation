@@ -3,7 +3,7 @@ var ctx = $canvas[0].getContext("2d");
 var $body = $('body');
 
 var imageCount = 9;
-var lineHeight = 1; //pixels
+var lineHeight = 9; //pixels
 
 function setup() {
   $canvas.attr('height', $body.height());
@@ -24,9 +24,9 @@ function loop() {
     renderRandomImage(randomImage);
   }, 2000);
   setInterval(function () {
-    selectLine();
-    selectLine();
-    selectLine();
+    for(var i=0; i<9; i++){
+      selectLine();
+    }
   }, 10);
 }
 
