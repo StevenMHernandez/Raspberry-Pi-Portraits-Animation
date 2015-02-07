@@ -31,6 +31,7 @@ app.post('/animation/images', function (req, res) {
   if (uri != undefined) {
     db.serialize(function() {
       db.run("INSERT INTO images ('uri') VALUES ('" + uri + "')");
+      res.send(uri + ' stored');
     });
   }
   else {

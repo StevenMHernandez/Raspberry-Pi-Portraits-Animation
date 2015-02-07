@@ -19,18 +19,21 @@ print 'camera started.'
 
 try:
 	while True:
-		if (GPIO.input(18) == False & buttonValue == 0):
-			buttonValue = 1
-#			camera.start_preview()
-			camera.vflip = True
-#			camera.hflip = True
-			camera.quality = 100
-			camera.resolution = (1920, 1080)
-			time.sleep(0.5)
-			uri = '/uploads/' + str(time.time()) + '.jpg'
-			camera.capture('public' + uri)
-			print requests.post(url, data=json.dumps({'uri': uri}), headers=headers)
-#			camera.stop_preview()
+		if(GPIO.input(18) == False):
+			if(buttonValue == 0):
+				buttonValue = 1
+#				camera.start_preview()
+				camera.vflip = True
+#				camera.hflip = True
+				camera.quality = 90
+				camera.resolution = (800, 600)
+				time.sleep(0.5)
+				uri = '/uploads/' + str(time.time()) + '.jpg'
+				camera.capture('public' + uri)
+				payload = {'uri': 'uri'}
+				r = requests.post(url, data=json.dumps(payload), headers=headers)
+				print(r.text)
+#				camera.stop_preview()
 		else:
 			buttonValue = 0
 		time.sleep(0.5)

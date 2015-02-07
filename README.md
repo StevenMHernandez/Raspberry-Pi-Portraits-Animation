@@ -25,3 +25,7 @@ make animation.db file in storage/db/
 install node them run server.js
 
     node server.js
+
+start camera
+
+    sudo python camera.py
