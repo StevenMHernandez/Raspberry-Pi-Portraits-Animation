@@ -17,7 +17,7 @@ camera.brightness = 55
 camera.vflip = True
 # camera.hflip = True
 camera.quality = 90
-camera resolution = (800, 600)
+camera.resolution = (800, 600)
 
 buttonValue = 0
 

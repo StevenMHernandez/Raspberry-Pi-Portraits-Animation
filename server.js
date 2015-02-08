@@ -31,6 +31,9 @@ app.post('/animation/images', function (req, res) {
   if (uri != undefined) {
     db.serialize(function() {
       db.run("INSERT INTO images ('uri') VALUES ('" + uri + "')");
+      animation.emit('newImage', {
+        uri: uri
+      });
       res.send(uri + ' stored');
     });
   }
@@ -48,5 +51,7 @@ app.get('/animation/images/random', function (req, res) {
 });
 
 var animation = io.of('/animation');
+
+console.log('server started.');
 
 server.listen(3005);

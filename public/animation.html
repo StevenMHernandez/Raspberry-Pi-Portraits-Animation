@@ -16,8 +16,7 @@
 <script>
     var socket = io('http://localhost:3005/animation');
     socket.on('newImage', function (data) {
-        console.log(data);
-        var uri = data;
+        var uri = data.uri;
         renderNewImage(uri);
     });
 </script>

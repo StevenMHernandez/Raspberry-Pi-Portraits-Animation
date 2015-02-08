@@ -57,4 +57,11 @@ function renderRandomImage(index) {
   });
 }
 
+function renderNewImage(uri) {
+  var halfCount = Math.ceil(imageCount / 2);
+  for(x=0; x<halfCount; x++) {
+    $($('img')[x]).attr('src', uri);
+  }
+}
+
 setup();

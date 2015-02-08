@@ -32,6 +32,10 @@ start camera
 
     sudo python camera.py
 
+By adding ` &` to the end of both commands, allows each script to run in the background.
+
+Make sure to wait for both scripts to print out to the terminal that they have started.
+
 ## Tests
 
 Before starting the animation, it is important to test the camera's brightness
