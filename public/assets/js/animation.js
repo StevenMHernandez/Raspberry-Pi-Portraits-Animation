@@ -2,8 +2,8 @@ var $canvas = $('canvas');
 var ctx = $canvas[0].getContext("2d");
 var $body = $('body');
 
-var imageCount = 9;
-var lineHeight = 9; //pixels
+var imageCount = 5;
+var lineHeight = 2; //pixels
 
 function setup() {
   $canvas.attr('height', $body.height());
