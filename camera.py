@@ -8,10 +8,8 @@ import json
 GPIO.setmode(GPIO.BCM)
 
 button_pin = 18
-led_pin = 17
 
 GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(led_pin, GPIO.OUT)
 
 camera = picamera.PiCamera()
 
@@ -23,6 +21,7 @@ camera.vflip = True
 # camera.hflip = True
 camera.quality = 90
 camera.resolution = (656, 416)
+camera.led = True
 
 buttonValue = 0
 
@@ -40,13 +39,14 @@ def led_blink_timer( seconds ):
 			led_on( blink_time )
 			led_off( blink_time )
 		i *= 2
+	camera.led = True
 
 def led_on( seconds ):
-	GPIO.output(led_pin, 1)
+	camera.led = True
 	time.sleep(seconds)
 
 def led_off( seconds ):
-	GPIO.output(led_pin, 0)
+	camera.led = False
 	time.sleep(seconds / 2)
 
 try:

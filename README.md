@@ -4,8 +4,6 @@
 
 Connect a momentary push-button switch to `GPIO pin 18` and `Ground` of the Raspberry Pi
 
-Next connect an LED to `GPIO pin 17` and `Ground` of the Raspberry Pi
-
 install *pip*
 
 https://pip.pypa.io/en/latest/installing.html#pip-included-with-python
