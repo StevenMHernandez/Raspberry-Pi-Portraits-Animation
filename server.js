@@ -52,7 +52,5 @@ app.get('/animation/images/random', function (req, res) {
 });
 
 var animation = io.of('/animation');
-
 console.log('server started.');
-
 server.listen(3005);

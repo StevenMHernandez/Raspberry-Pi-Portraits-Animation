@@ -8,9 +8,6 @@ var lineHeight = 2; //pixels
 function setup() {
   $canvas.attr('height', $body.height());
   $canvas.attr('width', $body.width());
-  //$canvas.height($body.height());
-  //$canvas.width($body.width());
-
   for(i=0; i<imageCount; i++) {
     $('.ie').append('<img src="http://placehold.it/999x999/090909/181818/"/>');
     renderRandomImage(i);
@@ -31,7 +28,6 @@ function loop() {
 }
 
 function selectLine() {
-
   var randomImage = Math.floor(Math.random() * imageCount);
   switch (true) {
     case (i < $canvas.height()):
